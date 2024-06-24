@@ -25,13 +25,14 @@ SECRET_KEY = 'django-insecure-+p(&2413dff)7^r-hk)3c49d-%o19bibbpsq9=k7b98+9szo@o
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [] #这个主机名才可以访问网站, 空为没有
 
-INTERNAL_IPS = [
+INTERNAL_IPS = [ #以下ip地址可以访问开发者服务器
     "127.0.0.1",
 ]
 
 # Application definition
+#将新应用添加到INSTALLED_APPS时，务必运行manage.py migrate，可以选择先使用manage.py makemigrations为其进行迁移。
 
 INSTALLED_APPS = [
     'django.contrib.admin',
