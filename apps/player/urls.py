@@ -2,6 +2,7 @@ from django.urls import path
 from . import views
 from django.contrib.auth.decorators import login_required
 
+#定义程序的命名空间
 app_name = 'player'
 
 urlpatterns = [

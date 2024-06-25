@@ -29,6 +29,7 @@ get_upload_path_album = partial(get_upload_path, folder_type="album")
 get_upload_path_playlist = partial(get_upload_path, folder_type="playlist")
 
 
+#创建歌曲存储类, 与数据库互动
 class Song(models.Model):
     title = models.CharField(max_length=100)
     artist = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
@@ -75,7 +76,7 @@ class Song(models.Model):
     def get_absolute_url(self):
         return reverse('player:song', args=[self.slug_artist, self.slug_song])
 
-
+#创建歌曲存储
 class SavedSong(models.Model):
     song = models.ForeignKey(Song, on_delete=models.CASCADE, related_name='saved_song_set')
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='saved_artist_set')
@@ -86,7 +87,7 @@ class SavedSong(models.Model):
     def __str__(self):
         return f"{self.user}: {self.song}"
 
-
+#照片种类
 class AlbumType(models.Model):
     title = models.CharField(max_length=100, unique=True)
 
@@ -94,6 +95,7 @@ class AlbumType(models.Model):
         return self.title
 
 
+#照片类
 class Album(models.Model):
     title = models.CharField(max_length=100)
     artist = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
@@ -134,6 +136,7 @@ class Album(models.Model):
         return reverse('player:album', args=[self.slug_artist, self.slug_album])
 
 
+#播放列表
 class Playlist(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField(max_length=1000, null=True, blank=True)

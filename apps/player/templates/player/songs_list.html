@@ -41,6 +41,7 @@
                 <source src="{% if song.audio_link %}{{ song.audio_link }}{% else %}{{ song.audio_file.url }}{% endif %}" type="audio/mp3">
               </audio>
             </div>
+              {#传递id, 和其本身当播放按钮被点击后#}
             <h5 class="mt-3 me-3"><a href='#' id="playButton{{ song.pk }}" class='link link-danger' onclick="playPauseAudio('{{ song.pk }}', this)"><i class="fa-solid fa-play"></i></a></h5>
           </div>
         </div>
@@ -49,8 +50,10 @@
         {% endfor %}
       </div>
     </div>
+    {#调用的底部音乐播放器#}
     {% include 'bottom_audio.html' %}
   </div>
 </div>
+    {#调用的分页功能#}
 {% include 'pagination.html' %}
 {% endblock %}

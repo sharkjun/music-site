@@ -27,7 +27,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('', views.home, name='home'),
-    path('player/', include(('apps.player.urls', 'player'))),
+    path('player/', include(('apps.player.urls', 'player'))), #include((urls, 命名空间))
     path('u/', include(('apps.users.urls', 'users'))),
 ]
 

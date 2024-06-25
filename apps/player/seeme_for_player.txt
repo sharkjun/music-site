@@ -1,0 +1,12 @@
+这里是播放器页面,用于实现音乐的播放
+
+
+如何查看数据库
+python manage.py shell
+from apps.users.models import CustomUser
+user = CustomUser.objects.filter()
+user #查看数据库内容
+
+
+#删除超级用户
+CustomUser.objects.get(username="").delete()

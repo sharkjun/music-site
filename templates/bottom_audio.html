@@ -1,4 +1,6 @@
+<!-- 加载静态资源-->
 {% load static %}
+<!-- 在底部的一个音乐播放器 -->
 <div id="bottom_audio" class="fixed-bottom" style="visibility: hidden;">
   <div class="container">
     <div class="range mt-2">
@@ -8,7 +10,8 @@
       <img id="bottom_audio_image" src="" width="60" height="60" class="me-3 song_image" alt="song_image">
       <div class="me-auto">
         <h5 id="bottom_audio_title" class="text-light">None</h5>
-        <h6 id="bottom_audio_artist" class="text-muted">Jane</h6>
+{#        <h6 id="bottom_audio_artist" class="text-muted">Jane</h6>#}
+          <h6 id="bottom_audio_artist" class="text-muted">konkon</h6>
       </div>
       <div class="d-flex">
         <!-- Mute checkbox -->
@@ -21,4 +24,5 @@
     </div>
   </div>
 </div>
+{#引入javascript文件#}
 <script src="{% static 'bottom_player.js' %}"></script>

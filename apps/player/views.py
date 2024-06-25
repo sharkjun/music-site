@@ -5,6 +5,7 @@ from django.views import generic
 from django.contrib import messages
 from django.conf import settings
 
+#导入数据库模型
 from .models import Album, Playlist, Song, SavedSong
 from .forms import SongForm, AlbumForm, PlaylistForm
 

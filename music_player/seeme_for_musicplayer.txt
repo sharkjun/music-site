@@ -1,0 +1,17 @@
+#一切开始的地方
+#urls为驱动网站的目录
+
+python manage.py runserver启动服务器
+python manage.py runserver 8080  在8080端口上启动服务器
+
+
+python manage.py migrate 用于创建数据库表格
+
+setting local.py中的数据库配置
+ENGINE – 可以是'django.db.backends.sqlite3'、'django.db.backends.postgresql'、'django.db.backends.mysql'或'django.db.backends.oracle'。其他后端也可用。
+NAME – 您数据库的名称。如果您使用的是 SQLite，数据库将是您计算机上的一个文件；在这种情况下，NAME 应为该文件的完整绝对路径，包括文件名。默认值 BASE_DIR / 'db.sqlite3' 将在您的项目目录中存储该文件。
+
+如果您使用的是 SQLite，则无需事先创建任何内容 - 数据库文件将在需要时自动创建。
+
+python manage.py shell
+

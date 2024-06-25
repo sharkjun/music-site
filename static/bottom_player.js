@@ -13,6 +13,7 @@ function playPauseAudio(id, button) {
   const audio = document.getElementById(id);
   const audio_title = document.getElementById('title' + id);
   const audio_artist = document.getElementById('artist' + id);
+  // 动态调整图片
   const audio_image = document.getElementById('image' + id);
 
   bottom_audio.style.visibility = "visible";
